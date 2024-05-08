@@ -1,5 +1,5 @@
 import React from 'react'
-import InstagramIcon from "@material-ui/icons/Instagram";
+import InstagramIcon from '@mui/icons-material/Instagram';
 import '../styles/footer.css'
 
 function Footer() {
