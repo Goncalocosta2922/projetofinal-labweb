@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='navbarleft'>
-                <Link to="/">Início</Link>
+                <Link to="/">Home</Link>
             </div>
             <div className='navbarmiddle'>
                 <input type="text" placeholder="Search..." />
