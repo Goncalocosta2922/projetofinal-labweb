@@ -1,7 +1,6 @@
 .navbar {
     background-color: red;
     display: flex;
-    justify-content: flex-end;
     padding: 2%;
 }
 .navbar a {
@@ -9,4 +8,10 @@
     text-decoration: none;
     margin-left: 20px;
     font-size: 20px;
+}
+.navbarmiddle {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
