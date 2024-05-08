@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Home from './pages/Home'
 import About from './pages/About'
-import Contact from './pages/Contact'
+import Login from './pages/Login'
 import Carrinho from './pages/Carrinho'
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" exact component={Home} />
         <Route path="/sobre" component={About} />
-        <Route path="/login" component={Contact} />
+        <Route path="/login" component={Login} />
         <Route path="/cart" component={Carrinho} />
       </Routes>
     </Router>
