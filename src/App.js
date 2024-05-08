@@ -5,6 +5,7 @@ import Navbar from './components/navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Carrinho from './pages/Carrinho'
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/" exact component={Home} />
         <Route path="/sobre" component={About} />
-        <Route path="/loginouregisto" component={Contact} />
+        <Route path="/login" component={Contact} />
+        <Route path="/cart" component={Carrinho} />
       </Routes>
     </Router>
   )
