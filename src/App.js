@@ -5,7 +5,7 @@ import Navbar from './components/navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Login from './pages/Login'
-import Carrinho from './pages/Carrinho'
+import Cart from './pages/Cart'
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/" exact component={Home} />
         <Route path="/sobre" component={About} />
         <Route path="/login" component={Login} />
-        <Route path="/cart" component={Carrinho} />
+        <Route path="/cart" component={Cart} />
       </Routes>
     </Router>
   )
