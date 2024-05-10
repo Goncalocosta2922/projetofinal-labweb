@@ -1,9 +1,16 @@
 import React from 'react'
+import '../styles/Login.css'
 
-const Contact = () => {
+const   Login = () => {
   return (
-    <div>Contact</div>
+    <div> 
+      <hi>Login</hi>
+      <input type="Text" />
+      <input type="Password" />
+      <button>Submit</button>
+
+  </div>
   )
 }
 
-export default Contact
+export default Login

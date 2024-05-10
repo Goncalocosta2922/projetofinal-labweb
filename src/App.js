@@ -14,10 +14,10 @@ const App = () => {
       <Navbar />
       <Footer />
       <Routes>
-        <Route path="/" exact component={Home} />
-        <Route path="/sobre" component={About} />
-        <Route path="/login" component={Login} />
-        <Route path="/cart" component={Cart} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="/sobre" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   )
