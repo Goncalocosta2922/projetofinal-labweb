@@ -13,7 +13,7 @@ const Navbar = () => {
                 <input type="text" placeholder="Search..." />
             </div>
             <div className='navbarright'>
-                <Link to="/sobre">Sobre</Link>
+                <Link to="/products">Products</Link>
                 <Link to="/login">Sign in/Sign up</Link>
                 <Link to="/cart"><button className="cart-button"><img src={cart} alt='carrinho'/></button></Link>
             </div>

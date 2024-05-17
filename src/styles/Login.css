@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .fullbox {
     display: flex;
     justify-content: center;
@@ -79,3 +80,30 @@ a:hover {
    
 
 
+=======
+.fullbox{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: lightgrey;
+    padding-top: 6%;
+}
+.Login , .Register {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 35%;
+    height: 70%;
+    margin-top: 3%;
+    padding-top: 2%;
+    color: red;
+    background-color: white;
+}
+input {
+    margin: 10px;
+}
+button {
+    margin: 20px;
+}
+>>>>>>> 1cd8c61f447146ba8ccd4e8d2b499b3727f9e0d8
