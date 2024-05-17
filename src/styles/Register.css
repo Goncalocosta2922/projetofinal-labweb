@@ -1,0 +1,44 @@
+.fullbox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 4%;
+}
+
+.Register-Register, .Register-Login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightgray;
+    width: 40%;
+    height: 450px;
+    padding: 20px;
+}
+
+.Register-Register {
+    border-right: 1px solid #000;
+}
+
+.Register-Full-name,.Register-Email,.Register-Phone-Number,.Register-Adress,.Register-User-Name,.Register-password {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.Register-Full-name input,.Register-Email input,.Register-Phone-Number input,.Register-Adress input,.Register-User-Name input,.Register-password input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 100%;
+    padding-left: 40px; 
+}
+
+
+
+
+
+
+
+

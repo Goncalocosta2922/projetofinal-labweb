@@ -6,6 +6,7 @@ import Footer from './components/footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Login from './pages/Login'
+import Register from './pages/Register'
 import Cart from './pages/Cart'
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" exact element={<Home />} />
         <Route path="/sobre" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
