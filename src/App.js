@@ -5,8 +5,8 @@ import Navbar from './components/navbar'
 import Footer from './components/footer'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Register from './pages/Register'
 import Cart from './pages/Cart'
-import Products from './pages/Products'
 
 const App = () => {
   return (
@@ -15,8 +15,8 @@ const App = () => {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/products" element={<Products />} />
       </Routes>
       <Footer />
     </Router>

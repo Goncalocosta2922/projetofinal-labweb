@@ -1,25 +1,60 @@
-.fullbox{
+.fullbox {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
-    background-color: lightgrey;
-    padding-top: 6%;
+    height: 68vh;
 }
-.Login , .Register {
+.Login-Login, .Login-Register {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 35%;
-    height: 70%;
-    margin-top: 3%;
-    padding-top: 2%;
-    color: red;
-    background-color: white;
+    background-color: lightgray;
+    width: 40%;
+    height: 60%;
+    padding: 2%;
 }
-input {
-    margin: 10px;
+.Login-Login {
+    border-right: 1px solid #000;
 }
-button {
+.Login-user-container , .Login-password-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+.Login-user-container input, .Login-password-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 100%;
+    padding-left: 40px; 
+}
+.Login-icons {
+    position: absolute;
+    left: 10px;
+    color: #666;
+}
+.Login-button {
     margin: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.Register-button{
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+a {
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
 }
