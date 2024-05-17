@@ -8,7 +8,7 @@ const Login = () => {
     event.preventDefault();
     // Lógico de login
   }
-
+  
   return (
     <div className='fullbox'>
       <div className='Login-Login'>
@@ -34,7 +34,7 @@ const Login = () => {
           Create Account
         </button>
       </div>
-      </div>
+    </div>
   );
 }
 
