@@ -6,7 +6,6 @@ import { RiLockPasswordFill } from "react-icons/ri";
 const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Lógico de login
   }
   
   return (
@@ -23,7 +22,6 @@ const Login = () => {
             <RiLockPasswordFill className='Login-icons' />
             <input type='password' placeholder='Password' required/>
           </div>
-          <a href='#'>Forgot Password?</a>
           <button className='Login-button'>Login</button>
         </form>
         </div>
