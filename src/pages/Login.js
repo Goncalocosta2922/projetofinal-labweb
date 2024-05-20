@@ -8,7 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [isAdmin, setIsAdmin] = useState('');
 
-  
+  // Função para decompor o token
   function decodeJWT_isAdmin(token){
     const parts = token.split('.');
     const decodedPayload = JSON.parse(atob(parts[1]));
@@ -28,11 +28,11 @@ const Login = () => {
     .then(response => response.text())
     .then(data => {
       const token = JSON.parse(data);
-      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('token', token);// guarda o token no session storage
 
       const isAdmin = decodeJWT_isAdmin(token);
       setIsAdmin(isAdmin);
-      sessionStorage.setItem('isAdmin', isAdmin);
+      sessionStorage.setItem('isAdmin', isAdmin);// guarda o isAdmin no session storage
     })
     .catch((error) => {
       console.error('Error:', error);

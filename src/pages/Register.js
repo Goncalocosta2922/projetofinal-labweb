@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import '../styles/Register.css';
 
+// Função para validar a password
 function validatePassword(password) {
     let regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
 }
-
+// Função para validar o número de telefone
 const validatePhoneNumber = (phoneNumber) => {
     const phoneRegex = /^\d{9}$/;
     return phoneRegex.test(phoneNumber);
 }
-
+// Função para validar o nome completo
 const validateFullName = (fullName) => {
     const nameRegex = /^[A-Za-z\s]+$/;
     return nameRegex.test(fullName);
 }
-
+// Função para validar o email
 const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);

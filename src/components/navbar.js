@@ -8,6 +8,7 @@ const Navbar = () => {
     const isAdmin = sessionStorage.getItem('isAdmin');
     const navigate = useNavigate();
 
+    // Função para pesquisar
     const handleInputChange = (event) => {
         setSearchQuery(event.target.value);
     };
