@@ -1,0 +1,27 @@
+ .home-background-image img {
+    width: 100%;
+    display: block;
+  }
+  
+  .Button {
+  position: absolute;
+  top: 50%;
+  left: 45px; 
+  padding: 20px 35px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  }
+
+  .Text{
+     position: absolute;
+     top: 45%;
+    left: 20px; 
+    color: #fff; 
+    font-size: 16px; 
+    z-index: 1;
+      
+  }
+  

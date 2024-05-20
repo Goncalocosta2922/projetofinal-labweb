@@ -1,10 +1,22 @@
-import React from 'react'
-import background from '../assets/083eb282040e3272e5fad8154853a02b.png'
+import React from 'react';
+import background from '../assets/homebackground.png';
+import '../styles/Home.css';
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
+
+      <div className='home-background-image'>
+        <img src={background} alt='Background' />
+       
+        <button className='Button' onClick={() => window.location.assign('/Products')}>
+           Products List
+        </button>
+        <div className='Text'  >
+        Click here to see all products
+        </div>
+      </div>
+   
+  );
 }
 
-export default Home
+export default Home;
