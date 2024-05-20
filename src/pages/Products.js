@@ -26,17 +26,19 @@ function Products() {
     }, [token]);
 
     return (
-        <div>
+        <div className='list'>
             <h1>Products</h1>
-            <ul>
+            <div className='products'>
                 {products.map(product => (
-                    <li key={product.product_id} className='product'> 
+                    <div key={product.product_id} className='product-id'> 
                     <img src={product.photo_link} alt={product.name} />
+                    <div className='product-info'>
                         <h3>{product.name}</h3>
                         <p>Price: {product.price} €</p>
-                    </li>
+                    </div>
+                    </div>
                 ))}
-            </ul>
+            </div>    
         </div>
     )
 }
