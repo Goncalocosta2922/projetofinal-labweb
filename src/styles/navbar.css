@@ -19,3 +19,15 @@
 .cart-button {
     cursor: pointer;
 }
+/* Menos ou igual a 600px */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        margin: 10px 0;
+    }
+    .navbarmiddle {
+        flex-direction: column;
+    }
+}
