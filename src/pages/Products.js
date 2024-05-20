@@ -35,6 +35,7 @@ function Products() {
                     <div className='product-info'>
                         <h3>{product.name}</h3>
                         <p>Price: {product.price} €</p>
+                        <button className='product-button'> Add to Cart</button>
                     </div>
                     </div>
                 ))}
