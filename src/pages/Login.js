@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../styles/Login.css';
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -29,7 +28,7 @@ const Login = () => {
     .then(response => response.text())
     .then(data => {
       const token = JSON.parse(data);
-      localStorage.setItem('token', token);
+      sessionStorage.setItem('token', token);
       console.log(token);
 
       const isAdmin = decodeJWT_isAdmin(token);
@@ -55,7 +54,7 @@ const Login = () => {
             <RiLockPasswordFill className='Login-icons' />
             <input type='password' placeholder='Password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
           </div>
-          <Link to='/'><button className='Login-button'>Login</button></Link>
+          <button className='Login-button'>Login</button>
         </form>
         </div>
         <div className='Login-Register'>

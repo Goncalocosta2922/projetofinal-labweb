@@ -7,7 +7,7 @@ const Home = () => {
 
       <div className='home-background-image'>
         <img src={background} alt='Background' />
-        <button className='Button' onClick={() => window.location.assign('/Products')}>
+        <button className='Button' onClick={() => window.location.assign('/products')}>
           Products List
         </button>
       </div>

@@ -3,7 +3,7 @@ import '../styles/Products.css';
 
 function Products() {
     
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     const [products, setProducts] = useState([]);
 
     useEffect(() => {

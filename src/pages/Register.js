@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/Register.css';
-import { Link } from 'react-router-dom';
 
 function validatePassword(password) {
     let regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -113,7 +112,7 @@ function Register() {
                         <input type='password' placeholder='Password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
                         {passwordError && <p>The password must contain at least 8 characters, 1 number, 1 uppercase letter and 1 special character.</p>}
                     </div>
-                    <Link to='/login'><button type='submit' className='Register-button'>Register</button></Link>
+                    <button type='submit' className='Register-button'>Register</button>
                 </form>
             </div>
             <div className='Register-Login'>
