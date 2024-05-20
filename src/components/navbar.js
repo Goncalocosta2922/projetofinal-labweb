@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='navbarleft'>
-                <Link to="/">Home</Link>
+                <Link to="/" className='marketplace-link'>Marketplace</Link>
             </div>
             <div className='navbarmiddle'>
                 <form onSubmit={handleSearchSubmit}>

@@ -19,6 +19,9 @@
 .cart-button {
     cursor: pointer;
 }
+.marketplace-link {
+    font-weight: bold; 
+}
 /* Menos ou igual a 600px */
 @media (max-width: 600px) {
     .navbar {
