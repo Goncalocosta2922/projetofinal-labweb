@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Register.css';
+import { Link } from 'react-router-dom';
 
 function validatePassword(password) {
     let regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -37,7 +38,7 @@ function Register() {
         event.preventDefault();
         const is_admin = 'false';
         const parsedPhoneNumber = parseInt(phone_number, 10);
-        const api = { username, full_name, email, phone_number: parsedPhoneNumber, address, password, is_admin };
+        const payload = { username, full_name, email, phone_number: parsedPhoneNumber, address, password, is_admin };
         let isError = false;
 
         if (!validatePassword(password)) {
@@ -73,9 +74,8 @@ function Register() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(api)
+            body: JSON.stringify(payload)
         }).then(response => response.json()).then(data => {
-            console.log('Api response:', data);
         }).catch((error) => {
             console.error('Error:', error);
         });
@@ -113,7 +113,7 @@ function Register() {
                         <input type='password' placeholder='Password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
                         {passwordError && <p>The password must contain at least 8 characters, 1 number, 1 uppercase letter and 1 special character.</p>}
                     </div>
-                    <button type='submit' className='Register-button'>Register</button>
+                    <Link to='/login'><button type='submit' className='Register-button'>Register</button></Link>
                 </form>
             </div>
             <div className='Register-Login'>
