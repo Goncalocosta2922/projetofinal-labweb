@@ -55,3 +55,25 @@ h1 {
 .product-button:hover {
     background-color: black;
 }
+.admin-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+.product-delete, .product-edit, .product-add {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px; 
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.product-delete:hover, .product-edit:hover, .product-add:hover {
+    background-color: #45a049;
+}

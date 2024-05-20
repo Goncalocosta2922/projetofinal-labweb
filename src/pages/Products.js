@@ -5,6 +5,7 @@ function Products() {
     
     const token = sessionStorage.getItem('token');
     const [products, setProducts] = useState([]);
+    const isAdmin = sessionStorage.getItem('isAdmin');
 
     useEffect(() => {
         const fetchdata = () =>
@@ -28,6 +29,13 @@ function Products() {
     return (
         <div className='list'>
             <h1>Products</h1>
+            {isAdmin === 'true' ? (
+                <div className='admin-buttons'>
+                    <button className='product-delete'> Delete </button>
+                    <button className='product-edit'> Edit </button>
+                    <button className='product-add'> Add </button>
+                </div>
+            ) : null}
             <div className='products'>
                 {products.map(product => (
                     <div key={product.product_id} className='product-id'> 
