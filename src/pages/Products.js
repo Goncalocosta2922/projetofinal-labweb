@@ -5,7 +5,12 @@ function Products() {
     
     const token = sessionStorage.getItem('token');
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]); 
     const isAdmin = sessionStorage.getItem('isAdmin');
+
+    const addToCart = (product) => {
+        setCart([...cart, product]);
+    }
 
     useEffect(() => {
         const fetchdata = () =>
@@ -26,6 +31,7 @@ function Products() {
         fetchdata();
     }, [token]);
 
+    
     return (
         <div className='list'>
             <h1>Products</h1>
@@ -43,7 +49,7 @@ function Products() {
                     <div className='product-info'>
                         <h3>{product.name}</h3>
                         <p>Price: {product.price} €</p>
-                        <button className='product-button'> Add to Cart</button>
+                        <button className='product-button' onClick={() => addToCart(product)}> Add to Cart</button>
                     </div>
                     </div>
                 ))}
