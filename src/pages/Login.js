@@ -29,11 +29,10 @@ const Login = () => {
     .then(data => {
       const token = JSON.parse(data);
       sessionStorage.setItem('token', token);
-      console.log(token);
 
       const isAdmin = decodeJWT_isAdmin(token);
       setIsAdmin(isAdmin);
-      console.log(isAdmin);
+      sessionStorage.setItem('isAdmin', isAdmin);
     })
     .catch((error) => {
       console.error('Error:', error);

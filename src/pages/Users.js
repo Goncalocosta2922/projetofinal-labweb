@@ -31,7 +31,7 @@ function Users() {
             <div className='users'>
                 {users.map(user => (
                     <div key={user.user_id} className='user-id'> 
-                    <h3>{user.username}</h3>
+                    <h3>Username: {user.username}</h3>
                     <p>Name: {user.full_name}</p>
                     <p>Email: {user.email}</p>
                     <p>Phone Number: {user.phone_number}</p>
