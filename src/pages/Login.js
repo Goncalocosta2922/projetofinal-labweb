@@ -6,7 +6,6 @@ import { RiLockPasswordFill } from "react-icons/ri";
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState('');
 
   // Função para decompor o token
   function decodeJWT_isAdmin(token){
@@ -14,9 +13,10 @@ const Login = () => {
     const decodedPayload = JSON.parse(atob(parts[1]));
     return decodedPayload.admin === 'true' ? 'true' : 'false';
 }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const payload={username, password, is_admin: isAdmin};
+    const payload={username, password};
 
     fetch('https://lwlc-proj-2024.onrender.com/users/login',{
       method: 'POST',
@@ -31,8 +31,10 @@ const Login = () => {
       sessionStorage.setItem('token', token);// guarda o token no session storage
 
       const isAdmin = decodeJWT_isAdmin(token);
-      setIsAdmin(isAdmin);
       sessionStorage.setItem('isAdmin', isAdmin);// guarda o isAdmin no session storage
+
+      // Recarrega a página após o login
+      window.location.reload();
     })
     .catch((error) => {
       console.error('Error:', error);

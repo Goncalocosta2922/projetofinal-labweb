@@ -5,32 +5,29 @@
     align-items: center;
     justify-content: space-between;
 }
-.navbar a {
+
+.navbar a, .navbar button {
     color: white;
     text-decoration: none;
     margin-left: 20px;
     font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
+
 .navbarmiddle {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cart-button {
-    cursor: pointer;
+
+.navbarright {
+    display: flex;
+    align-items: center;
 }
+
 .marketplace-link {
     font-weight: bold; 
 }
-/* Menos ou igual a 600px */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .navbar a {
-        margin: 10px 0;
-    }
-    .navbarmiddle {
-        flex-direction: column;
-    }
-}
+
