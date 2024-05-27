@@ -54,7 +54,27 @@ function Products() {
             .then(data => {
                 setShowForm(false); // Fecha o forms depois de adicionar um produto
                 setNewProduct({ name: '', price: '', photo_link: '' }); // Reseta o forms
-                window.location.reload(); // Recarrega a página
+                window.location.reload(); // Recarrega a página apos adicionar um produto
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+
+    const handleDeleteProduct = (productId) => {
+        fetch(`https://lwlc-proj-2024.onrender.com/products/${productId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token,
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    setProducts(products.filter(product => product.product_id !== productId));
+                } else {
+                    console.error('Failed to delete the product');
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -66,8 +86,6 @@ function Products() {
             <h1>Products</h1>
             {isAdmin === 'true' ? (
                 <div className='admin-buttons'>
-                    <button className='product-delete'>Delete</button>
-                    <button className='product-edit'>Edit</button>
                     <button className='product-add' onClick={() => setShowForm(!showForm)}>Add</button>
                 </div>
             ) : null}
@@ -87,6 +105,9 @@ function Products() {
                             <h3>{product.name}</h3>
                             <p>Price: {product.price} €</p>
                             <button className='product-button' onClick={() => addToCart(product)}>Add to Cart</button>
+                            {isAdmin === 'true' && (
+                                <button className='product-delete' onClick={() => handleDeleteProduct(product.product_id)}>Delete</button>
+                            )}
                         </div>
                     </div>
                 ))}
