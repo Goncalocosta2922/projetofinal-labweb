@@ -8,6 +8,7 @@ function Products() {
     const isAdmin = sessionStorage.getItem('isAdmin');
     const [newProduct, setNewProduct] = useState({ name: '', price: '', photo_link: '' });
     const [showForm, setShowForm] = useState(false);
+    const [editingProduct, setEditingProduct] = useState(null);
 
     const addToCart = (product) => {
         setCart([...cart, product]);
@@ -42,8 +43,13 @@ function Products() {
 
     const handleAddProduct = (e) => {
         e.preventDefault();
-        fetch('https://lwlc-proj-2024.onrender.com/products', {
-            method: 'POST',
+        const method = editingProduct ? 'PUT' : 'POST';
+        const url = editingProduct 
+            ? `https://lwlc-proj-2024.onrender.com/products/${editingProduct.product_id}`
+            : 'https://lwlc-proj-2024.onrender.com/products';
+
+        fetch(url, {
+            method: method,
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': token,
@@ -52,13 +58,20 @@ function Products() {
         })
             .then(response => response.json())
             .then(data => {
-                setShowForm(false); // Fecha o forms depois de adicionar um produto
-                setNewProduct({ name: '', price: '', photo_link: '' }); // Reseta o forms
-                window.location.reload(); // Recarrega a página apos adicionar um produto
+                setShowForm(false);
+                setNewProduct({ name: '', price: '', photo_link: '' });
+                setEditingProduct(null);
+                window.location.reload();
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
+    };
+
+    const handleEditProduct = (product) => {
+        setEditingProduct(product);
+        setNewProduct({ name: product.name, price: product.price, photo_link: product.photo_link });
+        setShowForm(true);
     };
 
     const handleDeleteProduct = (productId) => {
@@ -94,7 +107,7 @@ function Products() {
                     <input type='text' name='name' value={newProduct.name} onChange={handleInputChange} placeholder='Product Name' required/>
                     <input type='number' name='price' value={newProduct.price} onChange={handleInputChange} placeholder='Price' required/>
                     <input type='text' name='photo_link' value={newProduct.photo_link} onChange={handleInputChange} placeholder='Photo URL' required/>
-                    <button type='submit'>Add Product</button>
+                    <button type='submit'>{editingProduct ? 'Update Product' : 'Add Product'}</button>
                 </form>
             )}
             <div className='products'>
@@ -106,7 +119,10 @@ function Products() {
                             <p>Price: {product.price} €</p>
                             <button className='product-button' onClick={() => addToCart(product)}>Add to Cart</button>
                             {isAdmin === 'true' && (
-                                <button className='product-delete' onClick={() => handleDeleteProduct(product.product_id)}>Delete</button>
+                                <>
+                                    <button className='product-edit' onClick={() => handleEditProduct(product)}>Edit</button>
+                                    <button className='product-delete' onClick={() => handleDeleteProduct(product.product_id)}>Delete</button>
+                                </>
                             )}
                         </div>
                     </div>
