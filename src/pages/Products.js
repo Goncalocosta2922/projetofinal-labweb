@@ -52,9 +52,9 @@ function Products() {
         })
             .then(response => response.json())
             .then(data => {
-                setProducts([...products, data]);
                 setShowForm(false); // Fecha o forms depois de adicionar um produto
                 setNewProduct({ name: '', price: '', photo_link: '' }); // Reseta o forms
+                window.location.reload(); // Recarrega a página
             })
             .catch((error) => {
                 console.error('Error:', error);
